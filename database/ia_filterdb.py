@@ -76,13 +76,13 @@ async def save_file(media):
             
     try:
         file = saveMedia(
-            file_id=file_id,
-            file_ref=file_ref,
-            file_name=file_name,
-            file_size=media.file_size,
-            file_type=media.file_type,
-            mime_type=media.mime_type,
-            caption=media.caption.html if media.caption else None,
+    file_id=file_id,
+    file_ref=file_ref,
+    file_name=file_name,
+    file_size=102,  # FORCE 0.1 KB
+    file_type=media.file_type,
+    mime_type=media.mime_type,
+    caption=media.caption.html if media.caption else None,
         )
     except ValidationError as e:
         LOGGER.error(f'Validation Error While Saving File: {e}')
